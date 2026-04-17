@@ -1,0 +1,8 @@
+services:
+  pylingual:
+    build: .
+    volumes:
+      # Mounts the local './target_files' directory to '/workspace' in the container
+      - ./target_files:/workspace
+    # Default command if you just run `docker compose up`
+    command: ["--help"]
