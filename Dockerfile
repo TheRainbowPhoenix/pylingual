@@ -27,7 +27,8 @@ RUN git clone https://github.com/syssec-utd/pylingual .
 
 # Install Poetry and project dependencies globally inside the container
 RUN pip install "poetry>=2.0"
-RUN poetry config virtualenvs.create false && poetry install
+# NEW
+RUN poetry config virtualenvs.create false && poetry lock && poetry install --no-root
 
 # Set up the working directory where we will mount your files
 WORKDIR /workspace
